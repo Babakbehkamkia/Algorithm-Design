@@ -105,13 +105,6 @@ namespace A9
                         }
                         result[j]=ansReal;
                     }
-                    // else
-                    // {
-                    //     if(matrix[i,MATRIX_SIZE]!=0)
-                    //     {
-                    //         return new double[MATRIX_SIZE];
-                    //     }
-                    // }
                 }
             }
             return result;

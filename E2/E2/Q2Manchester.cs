@@ -24,43 +24,6 @@ namespace E2
         {
             throw new NotImplementedException();
             Dictionary<long,long>[] adj=makeAdj(W,R,G);
-            // while(true)
-            // {
-            //     List<long> path=BFS(,adj,match);
-                
-            //     if(path==null)
-            //     {
-            //         break;
-            //     }
-            //     long currentNode=0;
-            //     long minimum=long.MaxValue;
-            //     for(int i=0;i<path.Count;i++)
-            //     {
-            //         if(adj[currentNode][path[i]]<minimum)
-            //         {
-            //             minimum=adj[currentNode][path[i]];
-            //         }
-            //         currentNode=path[i];
-            //     }
-            //     currentNode=0;
-            //     for(int i=0;i<path.Count;i++)
-            //     {
-            //         adj[currentNode][path[i]]-=minimum;
-            //         if(adj[currentNode][path[i]]==0)
-            //         {
-            //             adj[currentNode].Remove(path[i]);
-            //         }
-            //         if(adj[path[i]].ContainsKey(currentNode))
-            //         {
-            //             adj[path[i]][currentNode]+=minimum;
-            //         }
-            //         else
-            //         {
-            //             adj[path[i]][currentNode]=minimum;
-            //         }
-            //         currentNode=path[i];
-            //     }
-            // }
             
         }
         
@@ -110,11 +73,6 @@ namespace E2
             while(q.Count!=0 && !isExist)
             {
                 long currentNode=q.Dequeue();
-                // if(currentNode==nodeCount-1)
-                // {
-                //     isExist=true;
-                //     break;
-                // }
                 foreach(var item in adj[currentNode].Keys)
                 {
                     if(item==nodeCount-1)

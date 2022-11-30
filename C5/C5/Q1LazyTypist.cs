@@ -81,27 +81,6 @@ namespace C5
                 }
 
             }
-
-            // foreach (Node node in nodes)
-            // {
-            //     tree[node.key]=new Dictionary<char,long>();
-            //     foreach (Edge edge in node.edges)
-            //     {
-            //         tree[node.key][edge.value]=edge.rightNode.key;
-            //     }
-
-            // }
-            // List<string> result= new List<string>();
-            // // tree=null;
-            // foreach (var node in nodes)
-            // {
-            //     Dictionary<char,long> dict=tree[node.key];
-            //     foreach (var c in dict)
-            //     {
-            //         // print("{}->{}:{}".format(node, tree[node][c], c))
-            //         result.Add($"{node.key}->{c.Value}:{c.Key}");
-            //     }
-            // }
             return (nodes,m);
         }
     }

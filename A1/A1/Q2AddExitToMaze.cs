@@ -33,43 +33,7 @@ namespace A12
         }
         public Dictionary<long,List<long>> makeAdj(long[][] edges,long nodeCount)
         {
-            // long[][] result=new long[nodeCount][];
-            // // List<long[]> result=new List<long[]>();
-            // for (int i=0;i<nodeCount;i++)
-            // {
-            //     List<long> listToAdd=new List<long>();
-            //     for (int j=0;j<edges.Length;j++)
-            //     {
-            //         if (edges[j][0]-1==i)
-            //         {
-            //             listToAdd.Add(edges[j][1]-1);
-            //         }
-            //         if (edges[j][1]-1==i)
-            //         {
-            //             listToAdd.Add(edges[j][0]-1);
-            //         }
-            //     }
-            //     result[i]=listToAdd.ToArray();
-            // }
-            // return result;
-
-
-
-
-            // List<long>[] result =new List<long>[nodeCount];
-            // for(long i=0;i<nodeCount;i++)
-            // {
-            //     result[i] = new List<long>();
-            // }
-            // foreach(long x in edges)
-            // {
-            //     result[x[0]-1].Add(x[1]-1);
-            //     result[x[1]-1].Add(x[0]-1);
-            // }
-            // return result;
-
-
-
+            
             Dictionary<long,List<long>> result=new Dictionary<long,List<long>>();
             for (int i = 0; i < edges.Length; i++)
             {
@@ -89,17 +53,7 @@ namespace A12
             }
             return result;
         }
-        // public void explore(Dictionary<long,List<long>> adj,long[] visited,long index)
-        // {
-        //     for (int i=0;i<adj[index].Count;i++)
-        //     {
-        //         if (visited[adj[index][i]]==0)
-        //         {
-        //             visited[adj[index][i]]=1;
-        //             explore(adj,visited,adj[index][i]);
-        //         }
-        //     }
-        // }
+        
         public void BFS(Dictionary<long,List<long>> adj,long[] visited,long index)
         {
             Queue<long> q=new Queue<long>();

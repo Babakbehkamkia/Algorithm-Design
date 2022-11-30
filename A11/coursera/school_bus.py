@@ -52,33 +52,6 @@ def optimal_path(graph):
     best_ans = INF
     best_path = []
 
-    # for p in permutations(range(n)):
-    #     cur_sum = 0
-    #     for i in range(1, n):
-    #         if graph[p[i - 1]][p[i]] == INF:
-    #             break
-    #         cur_sum += graph[p[i - 1]][p[i]]
-    #     else:
-    #         if graph[p[-1]][p[0]] == INF:
-    #             continue
-    #         cur_sum += graph[p[-1]][p[0]]
-    #         if cur_sum < best_ans:
-    #             best_ans = cur_sum
-    #             best_path = list(p)
-
-    # for i in range(n):
-    #     visited=[0 for k in range(n)]
-    #     visited[i]=1
-    #     for j in range(len(graph[i])):
-    #         if graph[i][j]!=INF:
-    #             visited[j]=1
-    #             p,ans=DFS(graph,i,j,n-2,i,visited,best_ans)
-    #             path=[i]+p
-    #             if ans<=best_ans:
-    #                 best_path=path
-    #                 best_ans=ans
-    #             visited[j]=0
-
     for i in range(n):
         depth=n-1
         sum=0
@@ -120,9 +93,6 @@ def check(graph,start_node,index,depth,visited,sum,best_ans,path):
             visited[j]=1
             path.append(j)
             if sum+graph[index][j]<=best_ans:
-                # is_ok=True
-                # sum+=graph[index][j]
-                # path.append(j)
                 p,s=check(graph,start_node,j,depth-1,visited,sum+graph[index][j],best_ans,path)
                 if s !=INF and s<best_ans:
                     is_ok=True

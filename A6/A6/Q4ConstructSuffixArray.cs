@@ -29,10 +29,6 @@ namespace A6
                 
                 string new_text=$"{text[l]}";
                 text=text.Remove(l);
-                // for(int index=0;index<l;index++)
-                // {
-                //     new_text+=text[index];
-                // }
                 new_text+=text;
                 text=new_text;
                 Node n=new Node(text.Length-i-1,text);
@@ -40,13 +36,6 @@ namespace A6
                 i+=1;
             }
             matrix.Sort();
-            // string last="";
-            // List<long> result=new List<long>();
-            
-            // foreach(var item in matrix)
-            // {
-            //     result.Add(item.suffix);
-            // }
             long[] result=new long[matrix.Count];
             for(int index=0;index<matrix.Count;index++)
             {

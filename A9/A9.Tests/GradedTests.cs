@@ -22,13 +22,6 @@ namespace A9.Tests
             RunTest(new Q2OptimalDiet("TD2"));
         }
 
-        [TestMethod(), Timeout(200)]
-        public void SolveTest_Q3OnlineAdAllocation()
-        {
-            Assert.Inconclusive("A9.Q3 Not Solved");
-            RunTest(new Q3OnlineAdAllocation("TD3"));
-        }
-
         public static void RunTest(Processor p)
         {
             TestTools.RunLocalTest("A9", p.Process, p.TestDataName, p.Verifier, 

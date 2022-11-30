@@ -71,7 +71,6 @@ namespace A5
                 Dictionary<char,long> dict=tree[node.key];
                 foreach (var c in dict)
                 {
-                    // print("{}->{}:{}".format(node, tree[node][c], c))
                     result.Add($"{node.key}->{c.Value}:{c.Key}");
                 }
             }

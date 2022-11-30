@@ -54,10 +54,6 @@ namespace A4
                             long queriesCount,
                             long[][] queries)
         {
-            // if(nodeCount<1000)
-            // {
-            //     return new double[1];
-            // }
             List<double[]>[] adj=makeAdj(nodeCount,edges);
             Node[] nodes=new Node[nodeCount];
             for(int i=0;i<nodeCount;i++)

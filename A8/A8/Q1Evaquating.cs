@@ -94,11 +94,6 @@ namespace A8
             while(q.Count!=0 && !isExist)
             {
                 long currentNode=q.Dequeue();
-                // if(currentNode==nodeCount-1)
-                // {
-                //     isExist=true;
-                //     break;
-                // }
                 foreach(var item in adj[currentNode].Keys)
                 {
                     if(item==nodeCount-1)

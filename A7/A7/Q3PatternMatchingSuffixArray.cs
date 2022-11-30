@@ -31,40 +31,10 @@ namespace A7
                 kelas=update_class(text2,L,order,kelas);
                 L*=2;
             }
-            // ---------------------------------------
-            // Dictionary<long,bool> dict=new Dictionary<long, bool>();
             List<long> result=new List<long>();
             foreach(string pattern in patterns)
             {
-                // int start=0;
-                // int end=order.Length;
-                // for(int i=0;i<pattern.Length;i++)
-                // {
-                //     if(end-start<2)
-                //     {
-                //         break;
-                //     }
-                //     start=binaraySearchMin(start,end,order,pattern,text,i);
-                //     end=binaraySearchMax(start,end,order,pattern,text,i);
-                // }
-                // ---------------------------
                 patternMaching(text,pattern,order,result);
-                // int start=p.Item1;
-                // int end=p.Item2;
-                // if (end==-1 && start==-1)
-                // {
-                //     return new long[1]{-1};
-                // }
-                // if(start!=end)
-                // {
-                //     for(int i=start;i<end+1;i++)
-                //     {
-                //         if(!result.Contains(order[i+1]))
-                //         {
-                //             result.Add(order[i+1]);
-                //         }
-                //     }
-                // }
             }
             if (result.Count==0)
             {
@@ -73,39 +43,6 @@ namespace A7
             result.Reverse();
             return result.ToArray();
         }
-        // public int binaraySearchMin(int start,int end,long[] order,string pattern,string text,int index)
-        // {
-        //     if(end-start<1)
-        //     {
-        //         return end;
-        //     }
-        //     int avg=(int)((start+end)/2);
-        //     if(text[(int)order[avg]+index]<pattern[index])
-        //     {
-        //         return binaraySearchMin(avg+1,end,order,pattern,text,index);
-        //     }
-        //     else
-        //     {
-        //         return binaraySearchMin(start,avg,order,pattern,text,index);
-        //     }
-        // }
-        // public int binaraySearchMax(int start,int end,long[] order,string pattern,string text,int index)
-        // {
-        //     if(end-start<2)
-        //     {
-        //         return start;
-        //     }
-        //     int avg=(int)((start+end)/2);
-        //     if(text[(int)order[avg]+index]>pattern[index])
-        //     {
-        //         return binaraySearchMax(start,avg,order,pattern,text,index);
-        //     }
-        //     else
-        //     {
-                
-        //         return binaraySearchMax(avg,end,order,pattern,text,index);
-        //     }
-        // }
         public void patternMaching(string text,string pattern,long[] order,List<long> result)
         {
             int min=0;
@@ -113,13 +50,6 @@ namespace A7
             while(min<max)
             {
                 int mid=(min+max)/2;
-                // string title = str.Substring(startIndex, endIndex);
-                // if((int)order[mid]+pattern.Length>=text.Length)
-                // {
-                //     break;
-                // }
-                // string str=text.Substring((int)order[mid],pattern.Length);
-                // // 
                 int i;
                 for(i=0;i<pattern.Length;i++)
                 {
@@ -153,19 +83,6 @@ namespace A7
             while(min<max)
             {
                 int mid=(min+max)/2;
-                // if((int)order[mid]+pattern.Length>=text.Length)
-                // {
-                //     break;
-                // }
-                // string str=text.Substring((int)order[mid],pattern.Length);
-                // if (string.Compare(pattern,str)<0)
-                // {
-                //     max=mid;
-                // }
-                // else
-                // {
-                //     min=mid+1;
-                // }
                 int i;
                 for(i=0;i<pattern.Length;i++)
                 {
@@ -190,11 +107,6 @@ namespace A7
                 }
             }
             int end=max;
-            // if (start>end)
-            // {
-            //     return new Tuple<int, int>(-1,-1);
-            // }
-            // return new Tuple<int, int>(start,end);
             if (start<=end)
             {
                 for(int i=start+1;i<end+1;i++)

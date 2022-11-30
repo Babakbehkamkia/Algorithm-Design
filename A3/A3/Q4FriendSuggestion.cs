@@ -39,26 +39,7 @@ namespace A3
             }
             return result;
         }
-        // public List<long[]>[] makeAdj(long NodeCount,long[][] edges)
-        // {
-        //     List<long[]>[] adj=new List<long[]>[NodeCount];
-        //     for(int i=0;i<NodeCount;i++)
-        //     {
-        //         adj[i]=new List<long[]>();
-        //     }
-        //     foreach(long[] item in edges)
-        //     {
-        //         if(forward)
-        //         {
-        //             adj[item[0]-1].Add(new long[2]{item[1]-1,item[2]});
-        //         }
-        //         else
-        //         {
-        //             adj[item[1]-1].Add(new long[2]{item[0]-1,item[2]});
-        //         }
-        //     }
-        //     return adj;
-        // }
+        
         public long bidirectionalDijkstra(long NodeCount,List<long[]>[] forwardAdj,
                                         List<long[]>[] backwardAdj,long startNode,long endNode)
         {

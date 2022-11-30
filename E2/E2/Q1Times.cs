@@ -17,37 +17,6 @@ namespace E2
 
         public string[] Solve(char[][] board, string[] words)
         {
-            // List<Node> nodes=makeTree(board);
-            // List<string> result=new List<string>();
-            // foreach(string word in words)
-            // {
-            //     Node currentNode=nodes[0];
-            //     bool isFound=true;
-            //     foreach(char letter in word)
-            //     {
-            //         // Edge edge=new Edge(letter,null,null);
-            //         bool isExist=false;
-            //         for(int i=0;i<currentNode.edges.Count;i++)
-            //         {
-            //             if(currentNode.edges[i].value==letter)
-            //             {
-            //                 currentNode=nodes[currentNode.edges[i].rightNode.count];
-            //                 isExist=true;
-            //                 break;
-            //             }
-            //         }
-            //         if(!isExist)
-            //         {
-            //             isFound=false;
-            //             break;
-            //         }
-            //     }
-            //     if(isFound)
-            //     {
-            //         result.Add(word);
-            //     }
-            // }
-            // return result.ToArray();
 
             List<string> result = new List<string>();
             foreach (string word in words)
@@ -281,29 +250,6 @@ namespace E2
                             }
                         }
                     }
-                    // for(int j=0;j<patterns[i].Length;j++)
-                    // {
-                        // char letter=patterns[i][j];
-                        // Node node=new Node(index,current_parent);
-                        
-                    //     Edge edge=new Edge(value:letter,leftNode:current_parent,rightNode:node);
-                    //     bool is_exist=false;
-                    //     foreach (Edge item in current_parent.edges)
-                    //     {
-                    //         if (edge.value==item.value)
-                    //         {
-                    //             node=item.rightNode;
-                    //             is_exist=true;
-                    //         }
-                    //     }
-                    //     if (!is_exist)
-                    //     {
-                    //         current_parent.edges.Add(edge);
-                    //         nodes.Add(node);
-                    //         index+=1;
-                    //     }
-                    //     current_parent=node;
-                    // }
                 }
             }
             return nodes;

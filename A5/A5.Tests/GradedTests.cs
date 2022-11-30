@@ -29,22 +29,6 @@ namespace A5.Tests
             RunTest(new Q3GeneralizedMPM("TD3"));
         }
 
-        // [TestMethod(), Timeout(1400)]
-        [TestMethod(), Timeout(2000)]
-        public void SolveTest_Q4SuffixTree()
-        {
-			Assert.Inconclusive();
-            RunTest(new Q4SuffixTree("TD4"));
-        }
-
-        // [TestMethod(), Timeout(1200)]
-        [TestMethod(), Timeout(2000)]
-        public void SolveTest_Q5ShortestNonSharedSubstring()
-        {
-			Assert.Inconclusive();
-            RunTest(new Q5ShortestNonSharedSubstring("TD5"));
-        }
-
 
         public static void RunTest(Processor p)
         {

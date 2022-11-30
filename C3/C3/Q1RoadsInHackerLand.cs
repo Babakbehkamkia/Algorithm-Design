@@ -53,109 +53,16 @@ namespace C2
                     parent[b] = a;
             }
         }
-        // private static T[] Init<T>(int size) where T : new() { var ret = new T[size]; for (int i = 0; i < size; i++) ret[i] = new T(); return ret; }
-
-        // public string Solve2(int n, int[][] roads)
-        // {
-
-        //     var ed = roads;
-        //     int m = roads.Length;
-        //     Array.Sort(ed, (e1, e2) => e1[2].CompareTo(e2[2]));
-        //     var dsu = new Dsu(n);
-        //     var g = Init<List<Tuple<int, int>>>(n);
-        //     for (int i = 0; i < m; i++)
-        //     {
-        //         ed[i][0]--;
-        //         ed[i][1]--;
-        //         if (dsu.FindSet(ed[i][0]) != dsu.FindSet(ed[i][1]))
-        //         {
-        //             g[ed[i][0]].Add(Tuple.Create(ed[i][1], ed[i][2]));
-        //             g[ed[i][1]].Add(Tuple.Create(ed[i][0], ed[i][2]));
-        //             dsu.UnionSets(ed[i][0], ed[i][1]);
-        //         }
-        //     }
-
-        //     var stack = new Stack<Tuple<int, int>>();
-        //     var stack2 = new Stack<Tuple<int, int>>();
-        //     stack.Push(Tuple.Create(0, -1));
-        //     while (stack.Count > 0)
-        //     {
-        //         var t = stack.Pop();
-        //         foreach (var e in g[t.Item1])
-        //             if (e.Item1 != t.Item2)
-        //                 stack.Push(Tuple.Create(e.Item1, t.Item1));
-        //         stack2.Push(t);
-        //     }
-
-        //     var cnt = new int[n];
-        //     while (stack2.Count > 0)
-        //     {
-        //         var t = stack2.Pop();
-        //         cnt[t.Item1] = 1;
-        //         foreach (var e in g[t.Item1])
-        //             if (e.Item1 != t.Item2)
-        //                 cnt[t.Item1] += cnt[e.Item1];
-        //     }
-
-        //     var stack3 = new Stack<Tuple<int, int, int>>();
-        //     var ans = Enumerable.Repeat(0L, m).ToList();
-        //     stack3.Push(Tuple.Create(0, -1, 0));
-        //     while (stack3.Count > 0)
-        //     {
-        //         var t = stack3.Pop();
-        //         foreach (var e in g[t.Item1])
-        //             if (e.Item1 != t.Item2)
-        //             {
-        //                 ans[e.Item2] = 1L * cnt[e.Item1] * (cnt[t.Item1] - cnt[e.Item1] + t.Item3);
-        //                 stack3.Push(Tuple.Create(e.Item1, t.Item1, t.Item3 + cnt[t.Item1] - cnt[e.Item1]));
-        //             }
-        //     }
-
-         // for (int i = 0; i < ans.Count; i++)
-        // {
-        //     long ex = ans[i] / 2;
-        //     ans[i] %= 2;
-        //     if (ex > 0)
-        //     {
-        //         if (i == ans.Count - 1)
-        //             ans.Add(0);
-        //         ans[i + 1] += ex;
-        //     }
-        // }
-        // while (ans[ans.Count - 1] == 0)
-        //     ans.RemoveAt(ans.Count - 1);
-        // ans.Reverse();
-
-        // return string.Concat(ans);
-    // }
-        // my code starts from here
-
         public string findDistances(long n,long[][] roads)
         {
             string str="";
-            // List<long[]> allCosts=new List<long[]>();
-            // long result=0;
-
-            // for(int i=0;i<n;i++)
-            // {
-            //     allCosts.Add(new long[n]);
-            // }
 
             List<long> costs=new List<long>();
             List<long> nodes=new List<long>();
             List<long[]>[] msTree=MST(n,roads);
-            // nodes.Add(0);
-            // costs.Add(0);
             
             // long currentNode=0;
             Dictionary<string,long> visited=new Dictionary<string,long>();
-            // for(int i=0;i<n;i++)
-            // {
-            //     visited[i]=new long[n];
-            // }
-            // long result=DFS(n,costs,nodes,msTree,currentNode,visited);
-            // return result;
-            // long result=0;
             for(int i=0;i<n;i++)
             {
                 foreach(long[] item in msTree[i])
@@ -186,11 +93,6 @@ namespace C2
                     }
                 }
             }
-            // string result="";
-            // for(int i=1;i<=str.Length;i++)
-            // {
-            //     result+=str[str.Length-i];
-            // }
             char[] result = str.ToCharArray();
             Array.Reverse( result );
             return new string(result);
@@ -198,11 +100,6 @@ namespace C2
         public string rebuildStr(string str,string binary)
         {
             string result="";
-            // string binary="";
-            // for(int i=1;i<=oldBinary.Length;i++)
-            // {
-            //     binary+=oldBinary[oldBinary.Length-i];
-            // }
             if (str.Length>binary.Length)
             {
                 long size=str.Length-binary.Length;
@@ -373,9 +270,6 @@ namespace C2
             for(int i=1;i<count;i++)
             {
                 lastSum+=costs[count-i];
-                // allCosts[(int)currentNode][nodes[count-i-1]]=lastSum;
-                // allCosts[(int)nodes[count-i-1]][currentNode]=lastSum;
-
             }
             return lastSum;
         }
@@ -406,26 +300,14 @@ namespace C2
 
         public string computeBinary(long result)
         {
-            // long i=0;
-            // while(result >Math.Pow(2,i))
-            // {
-            //     i+=1;
-            // }
-            // long[] lstr=new long[i];
             string str="";
             while (result>1)
             {
                 str+=$"{result%2}";
-                // lstr[i-1]=result%2;
-                // i-=1;
                 result=result/2;
 
             }
-            // lstr[0]=result;
             str+=$"{result}";
-            // str.ToArray();
-            
-            // str.Reverse();
             return str;
         }
     }

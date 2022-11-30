@@ -23,8 +23,6 @@ namespace A6
         public string Solve(string pattern)
         {
             List<string> result=new List<string>();
-            // long doller_index=0;
-            // long index=doller_index;
             Tuple<long[], long> t=computing_last_to_first(pattern);
             long[] last_to_first=t.Item1;
             long index=last_to_first[t.Item2];
@@ -59,15 +57,8 @@ namespace A6
                 }
                 
             }
-            // string ans="";
-            // int l=result.Count;
             result.Reverse();
             string ans=string.Join("",result);
-            
-            // for(int i=l-2;i>-1;i--)
-            // {
-            //     ans+=result[i];
-            // }
             return ans+="$";
         }
         public Tuple<long[],long> computing_last_to_first(string pattern)
@@ -85,7 +76,6 @@ namespace A6
                 }
                 nums.Add(num);
             }
-            // used=[0 for i in range(len(nums))]
             long[] used=new long[nums.Count];
             long index=0;
             for (int i=0;i<pattern.Length;i++)

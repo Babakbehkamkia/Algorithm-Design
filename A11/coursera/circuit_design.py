@@ -47,9 +47,6 @@ def strongly_connected_components(n,adj,adj_reverse):
 def make_adj(n,clauses):
     adj=[[] for i in range(2 * n + 1)]
     adj_inverse=[[] for i in range(2 * n + 1)]
-    # for i in range(1,2*n+1):
-    #     adj[i]=[]
-    #     adj_inverse[i]=[]
     for item in clauses:
         if len(item)==1:
             if item[0]<0:
@@ -91,34 +88,13 @@ def make_adj(n,clauses):
 # It is too slow to pass the problem.
 # Implement a more efficient algorithm here.
 def isSatisfiable(n,clauses):
-    # for mask in range(1<<n):
-    #     result = [ (mask >> i) & 1 for i in range(n) ]
-    #     formulaIsSatisfied = True
-    #     for clause in clauses:
-    #         clauseIsSatisfied = False
-    #         if result[abs(clause[0]) - 1] == (clause[0] < 0):
-    #             clauseIsSatisfied = True
-    #         if result[abs(clause[1]) - 1] == (clause[1] < 0):
-    #             clauseIsSatisfied = True
-    #         if not clauseIsSatisfied:
-    #             formulaIsSatisfied = False
-    #             break
-    #     if formulaIsSatisfied:
-    #         return result
-    # return None
-    #-------------------------------my code-------------------------------------------
     adj,adj_inverse=make_adj(n,clauses)
     scc,var_to_scc=strongly_connected_components(n,adj,adj_inverse)
-    # for i in range(1,n):
-    #     for l in scc:
-    #         if i in l and i+n in l:
-    #             return None
     for i in range(n):
         if var_to_scc[i]==var_to_scc[i+n]:
             return None
     
     values=[-1 for i in range(2*n)]
-    # scc_group=[-1 for i in range(len(scc))]
     
     for i in range(len(scc)-1,-1,-1):
         one_found=False
@@ -166,42 +142,10 @@ def isSatisfiable(n,clauses):
                     if scc[i][j]<=n:
                         values[scc[i][j]-1]=1
                         values[scc[i][j]+n-1]=0
-                        # if len(adj_inverse[scc[i][j]])==0:
-                        #     values[scc[i][j]-1]=0
-                        #     values[scc[i][j]+n-1]=1
-                        # elif len(adj_inverse[scc[i][j]+n])==0: 
-                            # values[scc[i][j]-1]=1
-                            # values[scc[i][j]+n-1]=0
 
                     else:
                         values[scc[i][j]-1]=1
                         values[scc[i][j]-n-1]=0
-                        # if len(adj_inverse[scc[i][j]])==0:
-                        #     values[scc[i][j]-1]=0
-                        #     values[scc[i][j]-n-1]=1
-                        # elif len(adj_inverse[scc[i][j]-n])==0: 
-                            # values[scc[i][j]-1]=1
-                            # values[scc[i][j]-n-1]=0
-                        
-            # for j in scc[i]:
-            #     if scc[i][j]==-1:
-            #         if scc[i][j]<=n:
-            #             values[scc[i][j]-1]=1
-            #             values[scc[i][j]+n-1]=0
-            #         else:
-            #             values[scc[i][j]-1]=1
-            #             values[scc[i][j]-n-1]=0
-
-
-    # for i in range(len(scc)):
-    #     for j in range(len(scc[i])):
-    #         if values[scc[i][j]-1]==-1:
-    #             if scc[i][j]<=n:
-    #                 values[scc[i][j]-1]=1
-    #                 values[scc[i][j]+n-1]=0
-    #             else:
-    #                 values[scc[i][j]-1]=1
-    #                 values[scc[i][j]-n-1]=0
 
     result=[]
 
@@ -224,5 +168,4 @@ if result is None:
     print("UNSATISFIABLE")
 else:
     print("SATISFIABLE")
-    # print(" ".join(str(-i-1 if result[i] else i+1) for i in range(n)))
     print(" ".join(str(result[i]) for i in range(n)))

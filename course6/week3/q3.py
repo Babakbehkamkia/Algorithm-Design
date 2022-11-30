@@ -21,42 +21,8 @@ def find_bubble(nodes,adj,index,t):
         paths.append(DFS(nodes,adj,index,i,t-1))
     return paths
 
-
-# patterns=[]
-# k,t=map(int,input().split())
-# for i in range(3):
-#     patterns.append(input())
-
 inputs=sys.stdin.read().split()
 k,t,patterns=int(inputs[0]),int(inputs[1]),inputs[2:]
-
-# nodes=[]
-# for p in patterns:
-#     for index in range(len(p)-k+2):
-#         node=p[index:index+k-1]
-#         if node not in nodes:
-#             nodes.append(node)
-
-# # adj=[]
-# # # inputs=[]
-# # # outputs=[]
-# # for i in range(len(nodes)):
-# #     # inputs.append(0)
-# #     # outputs.append(0)
-# #     adj.append([])
-
-# adj=[]
-# for i in range(len(nodes)):
-#     adj.append([])
-#     for j in range(len(nodes)):
-#         if i==j:
-#             continue
-#         if compare(nodes[i],nodes[j])==1:
-#             # inputs[j]+=1
-#             # outputs[i]+=1
-#             adj[i].append(j)
-# # for i in range(len(nodes)):
-# #     if inputs[i]!=outputs[i]:
 
 
 adj={}

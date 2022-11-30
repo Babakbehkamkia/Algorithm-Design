@@ -89,19 +89,6 @@ namespace A8
                         adj[i+1][flightCount+j+1]=1;
                     }
                 }
-                // if(edges[i][0]-1==edges[i][1]-1)
-                // {
-                //     continue;
-                // }
-                // if(adj[edges[i][0]-1].ContainsKey(edges[i][1]-1))
-                // {
-                //     adj[edges[i][0]-1][edges[i][1]-1]+=edges[i][2];
-                // }
-                // else
-                // {
-                //     adj[edges[i][0]-1][edges[i][1]-1]=edges[i][2];
-                // }
-                
             }
             return adj;
         }
@@ -116,11 +103,6 @@ namespace A8
             while(q.Count!=0 && !isExist)
             {
                 long currentNode=q.Dequeue();
-                // if(currentNode==nodeCount-1)
-                // {
-                //     isExist=true;
-                //     break;
-                // }
                 foreach(var item in adj[currentNode].Keys)
                 {
                     if(item==nodeCount-1)

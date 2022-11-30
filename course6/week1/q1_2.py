@@ -34,15 +34,6 @@ def explore(nodes,pattern,visited):
         if parent_node.reads[i]!=pattern and visited[parent_node.reads[i]]==0:
             visited[parent_node.reads[i]]=1
             return parent_node.reads[i]
-    
-    # index=-1
-    # for i in range(len(parent_node.reads)):
-    #     if parent_node.reads[i]!=pattern and visited[parent_node.reads[i]]==0:
-    #         index=i
-    # visited[parent_node.reads[index]]=1
-    # return parent_node.reads[index]
-
-
 
 
 def compare(nodes,pattern,visited):

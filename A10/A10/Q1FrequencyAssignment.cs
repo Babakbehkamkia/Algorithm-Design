@@ -14,27 +14,7 @@ namespace A10
 
         public String[] Solve(int V, int E, long[,] matrix)
         {
-            // write your code here
-            // throw new NotImplementedException();
-            // List<long>[] Adj=makeAdj(V,E,matrix);
-            // Dictionary<string,bool>[] colloring =new Dictionary<string, bool>[V];
-            // for(int i=0;i<V;i++)
-            // {
-            //     colloring[i]=new Dictionary<string, bool>();
-            //     colloring[i]["red"]=false;
-            //     colloring[i]["blue"]=false;
-            //     colloring[i]["green"]=false;
-            // }
             List<string[]> onlyOne=new List<string[]>();
-
-            // Queue<long> q=new Queue<long>();
-            // q.Enqueue(0);
-
-            // long[] visited=new long[V];
-            // string color="";
-            // while(q.Count!=0)
-            // {
-            //     long currentNode=q.Dequeue();
             for(long currentNode=1;currentNode<V+1;currentNode++)
             {
                 string[] arrOfOr=new string[3]{$"{(currentNode*3)}",$"{(currentNode*3-1)}",$"{(currentNode*3-2)}"};
@@ -46,43 +26,6 @@ namespace A10
                 onlyOne.Add(arrOfAnds2);
                 onlyOne.Add(arrOfAnds3);
             }
-                // if(colloring[currentNode]["red"]==false)
-                // {
-                //     color="red";
-                //     colloring[currentNode]["red"]=true;
-                // }
-                // else if (colloring[currentNode]["blue"]==false)
-                // {
-                //     color="blue";
-                //     colloring[currentNode]["blue"]=true;
-                // }
-                // else if(colloring[currentNode]["green"]==false)
-                // {
-                //     color="green";
-                //     colloring[currentNode]["green"]=true;
-                // }
-                // else
-                // {
-                //     return new string[3]{"2 1","1 0","-1 0"};
-                // }
-                // foreach(long item in Adj[currentNode])
-                // {
-                //     if(visited[item]==0)
-                //     {
-                //         visited[item]=1;
-                //         q.Enqueue(item);
-                        // colloring[item][color]=true;
-                        // long[] arr1=new long[2]{-currentNode*3,-item*3};
-                        // long[] arr2=new long[2]{-currentNode*3+1,-item*3+1};
-                        // long[] arr3=new long[2]{-currentNode*3+2,-item*3+2};
-                        // onlyOne.Add(arr1);
-                        // onlyOne.Add(arr2);
-                        // onlyOne.Add(arr3);
-
-                    // }
-                // }
-            
-            // }
             for(int i=0;i<E;i++)
             {
                 string[] arr1=new string[2]{$"{-((matrix[i,0])*3)}",$"{-((matrix[i,1])*3)}"};
@@ -119,11 +62,6 @@ namespace A10
             {
                 result[i] = new List<long>();
             }
-            // foreach(long[] x in edges)
-            // {
-                // result[x[0]-1].Add(x[1]-1);
-                // result[x[1]-1].Add(x[0]-1);
-            // }
             for(int i=0;i<E;i++)
             {
                 result[matrix[i,0]-1].Add(matrix[i,1]-1);

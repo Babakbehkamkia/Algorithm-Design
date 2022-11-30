@@ -82,7 +82,6 @@ namespace A6
                 }
                 nums.Add(num);
             }
-            // used=[0 for i in range(len(nums))]
             long[] used=new long[nums.Count];
             long index=0;
             for (int i=0;i<pattern.Length;i++)

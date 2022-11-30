@@ -47,25 +47,7 @@ namespace A12
         }
         public List<long>[] makeAdj(long[][] edges,long nodeCount,bool reverse)
         {
-            // long[][] result=new long[nodeCount][];
-            // // List<long[]> result=new List<long[]>();
-            // for (int i=0;i<nodeCount;i++)
-            // {
-            //     List<long> listToAdd=new List<long>();
-            //     for (int j=0;j<edges.Length;j++)
-            //     {
-            //         if (edges[j][0]-1==i && inverse==false)
-            //         {
-            //             listToAdd.Add(edges[j][1]-1);
-            //         }
-            //         if (edges[j][1]-1==i && inverse==true)
-            //         {
-            //             listToAdd.Add(edges[j][0]-1);
-            //         }
-            //     }
-            //     result[i]=listToAdd.ToArray();
-            // }
-            // return result;
+            
             List<long>[] result =new List<long>[nodeCount];
             for(var i=0;i<nodeCount;i++)
             {

@@ -71,53 +71,6 @@ for i in range(n):
         if i!=n-1:
             adj[i].append((i*2)%n+1)
 
-# print(Eulerian_cycle(adj,outputs))
-
-
-
-
-
-# path=[]
-# count=0
-# v={}
-# for i in adj[0]:
-#     v[i]=False
-# path.append([0,v])
-# is_finished=False
-# while(True):
-#     item=path[-1]
-#     current_node=item[0]
-#     visited=item[1]
-#     isChosen=False
-#     for i in adj[current_node]:
-#         if not isChosen:
-#             if i==0:
-#                 if count==n-1:
-#                     is_finished=True
-#                     break
-#                 else:
-#                     continue
-#             if visited[i]==False:
-#                 isExist=False
-#                 for a in path:
-#                     if a[0] ==i:
-#                         isExist=True
-#                         break
-#                 if not isExist:
-#                     isChosen=True
-#                     visited[i]=True
-#                     v={}
-#                     for l in adj[i]:
-#                         v[l]=False
-#                     path.append([i,v])
-#                     count+=1
-#     if is_finished:
-#         break
-#     if not isChosen:
-#         trash=path.pop()
-#         count-=1
-
-
 
 
 path=[]
@@ -160,42 +113,6 @@ while(True):
         trash=path.pop()
         used[trash[0]]=0
         count-=1
-    
-
-
-# path=[]
-# count=0
-# path.append(0)
-# is_finished=False
-# while(True):
-#     current_node=path[-1]
-#     isChosen=False
-#     for i in adj[current_node]:
-#         if not isChosen:
-#             if i==0:
-#                 if count==n-1:
-#                     is_finished=True
-#                     break
-#                 else:
-#                     continue
-#             isExist=False
-#             for a in path:
-#                 if a[0] ==i:
-#                     isExist=True
-#                     break
-#             if not isExist:
-#                 isChosen=True
-#                 visited[i]=True
-#                 v={}
-#                 for l in adj[i]:
-#                     v[l]=False
-#                 path.append([i,v])
-#                 count+=1
-#     if is_finished:
-#         break
-#     if not isChosen:
-#         trash=path.pop()
-#         count-=1    
 
 result=""
 for i in range(m):
